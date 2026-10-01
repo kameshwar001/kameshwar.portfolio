@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyPortfolio</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#admin">Admin</a></li>
+      </ul>
+      <button id="themeToggleBtn" aria-label="Toggle Theme">🌙 Dark</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h1>Hi, I'm a Web Developer</h1>
+        <p>Building responsive, accessible, and performant web applications.</p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="skills-grid">
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript (ES6+)</li>
+          <li>React.js</li>
+          <li>Git & GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards-grid">
+          <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>A responsive personal portfolio with local response storage and dark mode.</p>
+          </div>
+          <div class="card">
+            <h3>Contact Cards App</h3>
+            <p>Single Page React App managing reusable dynamic contact cards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required placeholder="Your email address" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" required placeholder="Write your message..."></textarea>
+          </div>
+
+          <button type="submit" class="btn">Send Message</button>
+          <p id="formStatus" class="status-msg"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Admin Panel Section -->
+    <section id="admin" class="section admin-section">
+      <div class="container">
+        <h2>Admin Response Panel</h2>
+
+        <!-- Login Form -->
+        <div id="adminLoginBox" class="admin-box">
+          <h3>Admin Login</h3>
+          <form id="adminLoginForm">
+            <div class="form-group">
+              <label for="adminUsername">Username:</label>
+              <input type="text" id="adminUsername" required placeholder="admin" />
+            </div>
+            <div class="form-group">
+              <label for="adminPassword">Password:</label>
+              <input type="password" id="adminPassword" required placeholder="admin123" />
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p id="loginError" class="status-msg error"></p>
+          </form>
+        </div>
+
+        <!-- Responses Viewer (Hidden by default) -->
+        <div id="adminDashboard" class="admin-box hidden">
+          <div class="dashboard-header">
+            <h3>Submitted Responses</h3>
+            <div>
+              <button id="clearResponsesBtn" class="btn danger-btn">Clear All</button>
+              <button id="adminLogoutBtn" class="btn">Logout</button>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Message</th>
+                </tr>
+              </thead>
+              <tbody id="responsesTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Developer Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
